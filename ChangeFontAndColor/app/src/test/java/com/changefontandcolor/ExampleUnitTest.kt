@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.changefontandcolor
 
 import org.junit.Test
 
