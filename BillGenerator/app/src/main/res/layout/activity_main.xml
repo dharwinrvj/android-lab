@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical" >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_gravity="center"
+        android:textSize="20dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10" />
+    <CheckBox
+        android:id="@+id/chips1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chips"/>
+    <CheckBox
+        android:id="@+id/cake1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cake"/>
+    <CheckBox
+        android:id="@+id/cookie1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cookies"/>
+    <CheckBox
+        android:id="@+id/burger1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Burger"/>
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="calculate bill"
+        android:background="#85C1E9"/>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mode of payment"
+        android:textSize="15dp"/>
+    <RadioGroup
+        android:id="@+id/mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/cash1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cash"/>
+        <RadioButton
+            android:id="@+id/card1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="card"/>
+        <RadioButton
+            android:id="@+id/gpay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gpay"/>
+    </RadioGroup>
+</LinearLayout>
