@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Dharwin - NotificationMessages</string>
+    <string name="channel_name">Channel name</string>
+    <string name="channel_description">Channel description</string>
+    <string name="snooze">Snooze</string>
+</resources>
