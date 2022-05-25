@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx, CHANNEL_ID)
                     .setSmallIcon(R.drawable.ic_launcher_background)
                     .setContentTitle(String.format("%s (id %d)", title, notificationId))
-                    .setContentText("Hello Dharwin !")
+                    .setContentText("Hello Nandha !")
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                     .setAutoCancel(false)
                     // Add the action button
