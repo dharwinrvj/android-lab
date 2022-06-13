@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             DownloadTask task = new DownloadTask();
             String encodedCityName = URLEncoder.encode(editText.getText().toString(), "UTF-8");
-            Log.println(Log.DEBUG,"hello",encodedCityName);
+            Log.println(Log.DEBUG, "hello", encodedCityName);
             task.execute("http://api.openweathermap.org/data/2.5/weather?q=" + encodedCityName + "&appid=9d788cb5e0afc9957f27d8fc6eb1e699");
 
             InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
 
-            Thread thread = new Thread(){
-                public void run(){
+            Thread thread = new Thread() {
+                public void run() {
                     runOnUiThread(new Runnable() {
                         public void run() {
                             Toast.makeText(getApplicationContext(), "Stuck in getweather() :(", Toast.LENGTH_SHORT).show();
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public class DownloadTask extends AsyncTask<String,Void,String> {
+    public class DownloadTask extends AsyncTask<String, Void, String> {
 
         @Override
         protected String doInBackground(String... urls) {
@@ -90,8 +90,8 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
 
-                Thread thread = new Thread(){
-                    public void run(){
+                Thread thread = new Thread() {
+                    public void run() {
                         runOnUiThread(new Runnable() {
                             public void run() {
                                 Toast.makeText(getApplicationContext(), "Stuck in downloadtask_class :(", Toast.LENGTH_SHORT).show();
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String weatherInfo = jsonObject.getString("weather");
                 String temppressInfo = jsonObject.getString("main");
-                String mainInfo = "["+temppressInfo+"]";
+                String mainInfo = "[" + temppressInfo + "]";
                 Log.i("Weather content", weatherInfo);
 
                 JSONArray weath = new JSONArray(weatherInfo);
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                     String description = jsonPart.getString("description");
 
                     if (!main.equals("") && !description.equals("")) {
-                        message += "Main : "+main+ "\nDescription : " + description + "\r\n";
+                        message += "Main : " + main + "\nDescription : " + description + "\r\n";
                     }
                 }
 
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                     String humidity = jsonPart.getString("humidity");
 //
                     if (!temp.equals("") && !pressure.equals("")) {
-                        message += "Temperature : " + temp + " K\nPressure : "+pressure+" Pa\nHumidity : "+humidity+" %\r\n";
+                        message += "Temperature : " + temp + " K\nPressure : " + pressure + " Pa\nHumidity : " + humidity + " %\r\n";
                     }
 
                 }
@@ -150,8 +150,8 @@ public class MainActivity extends AppCompatActivity {
                     resultTextView.setText(message);
                 } else {
 
-                    Thread thread = new Thread(){
-                        public void run(){
+                    Thread thread = new Thread() {
+                        public void run() {
                             runOnUiThread(new Runnable() {
                                 public void run() {
                                     Toast.makeText(getApplicationContext(), "No text entered :(", Toast.LENGTH_SHORT).show();
@@ -165,8 +165,8 @@ public class MainActivity extends AppCompatActivity {
 
             } catch (Exception e) {
 
-                Thread thread = new Thread(){
-                    public void run(){
+                Thread thread = new Thread() {
+                    public void run() {
                         runOnUiThread(new Runnable() {
                             public void run() {
                                 Toast.makeText(getApplicationContext(), "Could not find weather :(", Toast.LENGTH_SHORT).show();
